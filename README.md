@@ -27,18 +27,6 @@ $ forge build
 $ forge test
 ```
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
 ### Anvil
 
 ```shell
@@ -48,13 +36,16 @@ $ anvil
 ### Deploy
 
 ```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+$ forge script script/DeployBasicNft.s.sol:DeployBasicNft --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_API_KEY --broadcast
 ```
 
-### Cast
+After deployed to sepolia testnet, copy the contract address
+When minting is completed, import that address into metamask nft section 
+
+### Mint
 
 ```shell
-$ cast <subcommand>
+$ forge script script/Interactions.s.sol:MintBasicNft --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_API_KEY --broadcast
 ```
 
 ### Help
@@ -64,3 +55,5 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+libs: forge-std, foundry-devops, openzeppelin-contracts
