@@ -39,8 +39,14 @@ $ anvil
 $ forge script script/DeployBasicNft.s.sol:DeployBasicNft --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_API_KEY --broadcast
 ```
 
+```shell
+$ forge script script/DeployMoodNft.s.sol:DeployMoodNft --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_API_KEY --broadcast
+```
+
 After deployed to sepolia testnet, copy the contract address
 When minting is completed, import that address into metamask nft section 
+
+cast send <deployed contract address> "mintFunc()" --private-key <key> --rpc-url $RPC_URL
 
 ### Mint
 

@@ -16,6 +16,8 @@ contract DeployMoodNft is Script {
     return moodNft;
   }
 
+  // From now on, in order to combine 2 strings, we can just use string.concat()
+
   function svgToImgURI(string memory _svg) public pure returns (string memory) {
     string memory baseURL = "data:image/svg+xml;base64,";
     string memory encodedSvg = Base64.encode(bytes(string(abi.encodePacked(_svg))));
